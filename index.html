@@ -9,10 +9,10 @@
     <style>
         /* Outer wrapper with fixed border radius */
         .carousel-container {
-            border-radius: 15px;
+            border-radius: 0px;
             overflow: hidden;
         }
-
+    
         /* Basic image styling */
         .carousel-item img {
             width: 100%;
@@ -20,23 +20,30 @@
             object-fit: cover;
         }
 
-        /* Fade-in effect */
-        .carousel-item.fade-in img {
-            animation: fadeIn 1.5s ease-in-out;
-        }
 
-        /* Zoom-in effect */
-        .carousel-item.zoom-in img {
-            animation: zoomIn 1.5s ease-in-out;
-        }
-
-        /* Slide-in from right effect */
+    
+        /* Slide-in from right effect with 2s pause */
         .carousel-item.slide-in-right img {
-            animation: slideInRight 2.5s cubic-bezier(0.5, 0, 0.5, 1);
-            
+            animation: slideInPause 4.5s cubic-bezier(0, 0.8, 0, 1) forwards;
         }
-
+    
+        @keyframes slideInPause {
+            0% {
+                transform: translateX(100%); /* Start off-screen */
+                opacity: 1; /* Start invisible */
+            }
+            30% {
+                transform: translateX(0); /* End slide-in smoothly */
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(0); /* Stay still */
+                opacity: 1;
+            }
+        }
     </style>
+    
+    
 </head>
 
 <body>
@@ -46,7 +53,7 @@
             <div id="dynamicSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
                 <div class="carousel-inner">
                     <!-- Slide 1 -->
-                    <div class="carousel-item active fade-in">
+                    <div class="carousel-item active slide-in-right fade-in">
                         <img src="./images/1.jpg"
                             alt="Image 1">
                     </div>
