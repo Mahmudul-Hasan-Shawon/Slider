@@ -32,13 +32,10 @@
 
         /* Slide-in from right effect */
         .carousel-item.slide-in-right img {
-            animation: slideInRight 1.5s ease-in-out;
+            animation: slideInRight 2.5s cubic-bezier(0.5, 0, 0.5, 1);
+            
         }
 
-        /* Rotate effect */
-        .carousel-item.rotate img {
-            animation: rotateIn 1.5s ease-in-out;
-        }
     </style>
 </head>
 
@@ -54,7 +51,7 @@
                             alt="Image 1">
                     </div>
                     <!-- Slide 2 -->
-                    <div class="carousel-item zoom-in">
+                    <div class="carousel-item slide-in-right">
                         <img src="./images/2.png"
                             alt="Image 2">
                     </div>
@@ -64,12 +61,12 @@
                             alt="Image 3">
                     </div>
                     <!-- Slide 4 -->
-                    <div class="carousel-item rotate">
+                    <div class="carousel-item slide-in-right">
                         <img src="./images/4.png"
                             alt="Image 4">
                     </div>
                     <!-- Slide 5 -->
-                    <div class="carousel-item rotate">
+                    <div class="carousel-item slide-in-right">
                         <img src="./images/5.png"
                             alt="Image 5">
                     </div>
